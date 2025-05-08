@@ -43,7 +43,7 @@ $(document).ready(function ($) {
         //console.log(data);
         $('#example').dataTable({
             "paging": true,
-            "pageLength": 2,
+            "pageLength": 10,
             processing: true,
             serverSide: false,
             "data": data.data,
@@ -60,10 +60,10 @@ $(document).ready(function ($) {
                 },
                 {
                     "data": 'actiune',
-                    render: function (data, type, row, meta) {
+                    render: function (data, typxe, row, meta) {
                         if (type === 'display') {
                             let link = 'http://localhost:3002/users/' + row.id;
-                            return `<a href="javascript:void(0)" class="btn btn-info view" data-id="` + row.id + `">Vezi</a>
+                            return `<a href="javascript:void(0)" class="btn btn-success view" data-id="` + row.id + `">Vezi</a>
                             <a href="javascript:void(0)" class="btn btn-primary edit" data-id="`+ row.id + `">Editeaza</a>
                             <a href="javascript:void(0)" class="btn btn-danger delete" data-id="`+ row.id + `">Sterge</a>`;
                         }
